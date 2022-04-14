@@ -6,4 +6,8 @@
     <dimen name="dimen_100dp">100dp</dimen>
     <dimen name="dimen_2dp">2dp</dimen>
     <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_16sp">16sp</dimen>
+    <dimen name="dimen_12sp">12sp</dimen>
+    <dimen name="frag_detail_ll_padding">4dp</dimen>
+    <dimen name="frag_detail_ll_margin">4dp</dimen>
 </resources>

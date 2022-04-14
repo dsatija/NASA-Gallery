@@ -18,6 +18,9 @@
         <item name="android:textColor">@color/subTitleColor</item>
     </style>
 
-    <dimen name="dimen_16sp">16sp</dimen>
-    <dimen name="dimen_12sp">12sp</dimen>
+    <style name="fragment_detail_textView">
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_marginStart">@dimen/dimen_8dp </item>
+        <item name="android:layout_marginEnd">@dimen/dimen_8dp</item>
+    </style>
 </resources>

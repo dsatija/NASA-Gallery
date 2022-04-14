@@ -2,6 +2,7 @@ package com.dsatija.nasagallery.ui.gallery
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,7 @@ import com.dsatija.nasagallery.R
 import com.dsatija.nasagallery.data.Item
 import com.dsatija.nasagallery.databinding.ItemNasaPhotoBinding
 
-class NasaPhotoAdapter :
+class NasaPhotoAdapter(private val listener: OnItemClickListener) :
     PagingDataAdapter<Item, NasaPhotoAdapter.PhotoViewHolder>(PHOTO_COMPARATOR) {
 
 
@@ -28,8 +29,20 @@ class NasaPhotoAdapter :
         }
     }
 
-    class PhotoViewHolder(private val binding: ItemNasaPhotoBinding) :
+    inner class PhotoViewHolder(private val binding: ItemNasaPhotoBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val item = getItem(position)
+                    if (item != null) {
+                        listener.onItemClick(item)
+                    }
+                }
+            }
+        }
 
         fun bind(photo: Item) {
             binding.apply {
@@ -44,6 +57,10 @@ class NasaPhotoAdapter :
                 textviewDescription.text = photo.data.get(0).description
             }
         }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(photo: Item)
     }
 
     companion object {
