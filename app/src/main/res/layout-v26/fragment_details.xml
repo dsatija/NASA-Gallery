@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.details.DetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/frag_detail_ll_padding">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/frag_detail_ll_margin"
+                android:adjustViewBounds="true"
+                tools:layout_height="300dp"
+                tools:scaleType="centerCrop"
+                tools:src="@mipmap/ic_launcher_round"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/text_view_date"
+                style="@style/fragment_detail_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/colorAccent"
+                tools:text="April 14, 2022"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_title"
+                style="@style/fragment_detail_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:justificationMode="inter_word"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                tools:text="Nasa Townhall"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_description"
+                style="@style/fragment_detail_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:justificationMode="inter_word"
+                tools:text="This is the description"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</FrameLayout>

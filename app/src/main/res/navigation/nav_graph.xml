@@ -19,7 +19,7 @@
         android:id="@+id/detailsFragment"
         android:name="com.dsatija.nasagallery.ui.details.DetailsFragment"
         android:label="Photo"
-        tools:layout="@layout/fragment_details">
+        tools:layout="@layout/fragment_details" >
         <argument
             android:name="photo"
             app:argType="com.dsatija.nasagallery.data.Item" />
