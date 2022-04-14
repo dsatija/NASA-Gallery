@@ -34,12 +34,14 @@ class NasaPhotoAdapter :
         fun bind(photo: Item) {
             binding.apply {
                 Glide.with(itemView)
-                    .load(photo.links.get(0))
+                    .load(photo.links.get(0).href)
                     .centerCrop()
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .error(R.drawable.ic_error)
                     .into(imageView)
-                //textViewUserName.text = photo.user.username
+
+                textViewTitle.text = photo.data?.get(0)?.title
+                textviewDescription.text = photo.data?.get(0)?.description
             }
         }
     }

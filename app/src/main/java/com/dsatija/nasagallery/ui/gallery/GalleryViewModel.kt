@@ -11,12 +11,12 @@ import com.dsatija.nasagallery.data.NasaRepository
 class GalleryViewModel @ViewModelInject constructor(
     private val repository: NasaRepository
 ) : ViewModel() {
-    private val currentQuery = MutableLiveData(DEFAUL_QUERY)
+    private val currentQuery = MutableLiveData(DEFAULT_QUERY)
     val photos = currentQuery.switchMap { queryString ->
         repository.getSearchResults(queryString).cachedIn(viewModelScope)
     }
 
     companion object{
-        private const val DEFAUL_QUERY = "cats"
+        private const val DEFAULT_QUERY = "NASA"
     }
 }
