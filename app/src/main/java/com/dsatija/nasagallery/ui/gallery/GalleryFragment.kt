@@ -21,7 +21,9 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
         val adapter = NasaPhotoAdapter()
         binding.apply {
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = adapter
+            recyclerView.adapter = adapter.withLoadStateFooter(
+                footer = NasaPhotoLoadStateAdapter{adapter.retry()},
+            )
         }
 
         viewModel.photos.observe(viewLifecycleOwner){
