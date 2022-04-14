@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/galleryFragment"
         android:name="com.dsatija.nasagallery.ui.gallery.GalleryFragment"
-        android:label="fragment_gallery"
+        android:label="Gallery"
         tools:layout="@layout/fragment_gallery">
         <action
             android:id="@+id/action_galleryFragment_to_detailsFragment"
@@ -18,8 +18,8 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.dsatija.nasagallery.ui.details.DetailsFragment"
-        android:label="Details"
-        tools:layout="@layout/fragment_details" >
+        android:label="Photo"
+        tools:layout="@layout/fragment_details">
         <argument
             android:name="photo"
             app:argType="com.dsatija.nasagallery.data.Item" />

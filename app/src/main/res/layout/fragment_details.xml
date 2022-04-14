@@ -27,20 +27,35 @@
                 android:contentDescription="@string/app_name" />
 
             <TextView
+                android:id="@+id/text_view_date"
+                style="@style/fragment_detail_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/colorAccent"
+                tools:text="April 14, 2022"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/text_view_title"
+                style="@style/fragment_detail_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                tools:text="Nasa Townhall"
+                tools:visibility="visible" />
+
+            <TextView
                 android:id="@+id/text_view_description"
                 style="@style/fragment_detail_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 tools:text="This is the description"
-                tools:visibility="visible" />
-
-            <TextView
-                android:id="@+id/text_view_creator"
-                style="@style/fragment_detail_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                tools:text="Photo by xyz on unsplash"
                 tools:visibility="visible" />
         </LinearLayout>
     </ScrollView>

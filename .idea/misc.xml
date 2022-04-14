@@ -6,9 +6,9 @@
         <entry key="app/src/main/res/drawable/ic_error.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20572916666666666" />
-        <entry key="app/src/main/res/layout/fragment_details.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_details.xml" value="0.2017364657814096" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.20572916666666666" />
-        <entry key="app/src/main/res/layout/item_nasa_photo.xml" value="0.9355932203389831" />
+        <entry key="app/src/main/res/layout/item_nasa_photo.xml" value="0.1" />
         <entry key="app/src/main/res/layout/nasa_photo_load_state_footer.xml" value="0.17121588089330025" />
         <entry key="app/src/main/res/menu/menu_gallery.xml" value="0.20572916666666666" />
       </map>
