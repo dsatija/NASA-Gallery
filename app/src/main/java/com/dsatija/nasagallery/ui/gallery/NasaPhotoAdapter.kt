@@ -40,8 +40,8 @@ class NasaPhotoAdapter :
                     .error(R.drawable.ic_error)
                     .into(imageView)
 
-                textViewTitle.text = photo.data?.get(0)?.title
-                textviewDescription.text = photo.data?.get(0)?.description
+                textViewTitle.text = photo.data.get(0).title
+                textviewDescription.text = photo.data.get(0).description
             }
         }
     }
