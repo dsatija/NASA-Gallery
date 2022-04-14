@@ -23,6 +23,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUnsplashApi(retrofit: Retrofit): NasaApi =
+    fun provideNasaApi(retrofit: Retrofit): NasaApi =
         retrofit.create(NasaApi::class.java)
 }
