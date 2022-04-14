@@ -5,6 +5,6 @@ import java.util.*
 
 data class Collection(
     val href: String,
-    val items: LinkedList<ClipData.Item>,
+    val items: LinkedList<Item>,
     val metadata: Metadata,
 )
