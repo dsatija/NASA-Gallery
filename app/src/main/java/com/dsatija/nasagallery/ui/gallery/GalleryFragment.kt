@@ -41,16 +41,16 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
         viewModel.photos.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)
         }
-        adapter.addLoadStateListener { loadstate ->
+        adapter.addLoadStateListener { loadState ->
             binding.apply {
-                progressBar.isVisible = loadstate.source.refresh is LoadState.Loading
-                recyclerView.isVisible = loadstate.source.refresh is LoadState.NotLoading
-                btnRetry.isVisible = loadstate.source.refresh is LoadState.Error
-                textviewError.isVisible = loadstate.source.refresh is LoadState.Error
+                progressBar.isVisible = loadState.source.refresh is LoadState.Loading
+                recyclerView.isVisible = loadState.source.refresh is LoadState.NotLoading
+                btnRetry.isVisible = loadState.source.refresh is LoadState.Error
+                textviewError.isVisible = loadState.source.refresh is LoadState.Error
 
                 //empty view
-                if(loadstate.source.refresh is LoadState.NotLoading &&
-                    loadstate.append.endOfPaginationReached &&
+                if(loadState.source.refresh is LoadState.NotLoading &&
+                    loadState.append.endOfPaginationReached &&
                     adapter.itemCount < 1) {
                     recyclerView.isVisible = false
                     textviewEmpty.isVisible = true

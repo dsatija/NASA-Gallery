@@ -1,4 +1,4 @@
-package com.dsatija.nasagallery.ui.gallery;
+package com.dsatija.nasagallery.ui.gallery
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,6 +8,10 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.dsatija.nasagallery.databinding.NasaPhotoLoadStateFooterBinding
 
+/**
+ * Adapter for displaying a RecyclerView footer based on LoadState,
+ * to show loading spinner followed by a retry error button.
+ */
 class NasaPhotoLoadStateAdapter(
     private val retry: () -> Unit
 ) : LoadStateAdapter<NasaPhotoLoadStateAdapter.LoadStateViewHolder>() {
@@ -16,7 +20,7 @@ class NasaPhotoLoadStateAdapter(
         val binding = NasaPhotoLoadStateFooterBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
-        );
+        )
         return LoadStateViewHolder(binding)
     }
 
@@ -30,7 +34,7 @@ class NasaPhotoLoadStateAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         init {
-            binding.btnRetry.setOnClickListener() {
+            binding.btnRetry.setOnClickListener {
                 retry.invoke()
             }
         }

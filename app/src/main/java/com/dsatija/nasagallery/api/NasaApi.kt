@@ -4,9 +4,10 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface NasaApi {
-    companion object{
+    companion object {
         const val NASA_BASE_URL = "https://images-api.nasa.gov/"
     }
+
     @GET("/search")
     suspend fun searchPhotos(
         @Query("page") page: Int,
@@ -14,6 +15,4 @@ interface NasaApi {
         @Query("media_type") type: String = "image"
     ): NasaApiResponse
 
-    @GET("/search")
-    suspend fun getDetail(@Query("nasa_id") nasa_id: String): NasaApiResponse
 }

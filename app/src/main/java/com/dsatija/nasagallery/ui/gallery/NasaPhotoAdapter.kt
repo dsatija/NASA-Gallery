@@ -2,7 +2,6 @@ package com.dsatija.nasagallery.ui.gallery
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -12,18 +11,21 @@ import com.dsatija.nasagallery.R
 import com.dsatija.nasagallery.data.Item
 import com.dsatija.nasagallery.databinding.ItemNasaPhotoBinding
 
+/**
+ * Display paging data on the UI.
+ */
 class NasaPhotoAdapter(private val listener: OnItemClickListener) :
     PagingDataAdapter<Item, NasaPhotoAdapter.PhotoViewHolder>(PHOTO_COMPARATOR) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
         val binding =
-            ItemNasaPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false);
-        return PhotoViewHolder(binding);
+            ItemNasaPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return PhotoViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
-        val currentItem = getItem(position);
+        val currentItem = getItem(position)
         if (currentItem != null) {
             holder.bind(currentItem)
         }
@@ -47,14 +49,14 @@ class NasaPhotoAdapter(private val listener: OnItemClickListener) :
         fun bind(photo: Item) {
             binding.apply {
                 Glide.with(itemView)
-                    .load(photo.links.get(0).href)
+                    .load(photo.links[0].href)
                     .centerCrop()
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .error(R.drawable.ic_error)
                     .into(imageView)
 
-                textViewTitle.text = photo.data.get(0).title
-                textviewDescription.text = photo.data.get(0).description
+                textViewTitle.text = photo.data[0].title
+                textviewDescription.text = photo.data[0].description
             }
         }
     }
@@ -69,7 +71,7 @@ class NasaPhotoAdapter(private val listener: OnItemClickListener) :
                 oldItem: Item,
                 newItem: Item
             ): Boolean =
-                oldItem.data.get(0).nasa_id == newItem.data.get(0).nasa_id
+                oldItem.data[0].nasa_id == newItem.data[0].nasa_id
 
             override fun areContentsTheSame(oldItem: Item, newItem: Item) =
                 oldItem == newItem

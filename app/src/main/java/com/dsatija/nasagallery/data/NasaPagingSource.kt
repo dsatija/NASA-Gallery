@@ -5,7 +5,9 @@ import com.dsatija.nasagallery.api.NasaApi
 import retrofit2.HttpException
 import java.io.IOException
 
-
+/**
+ * Data set for paging.
+ */
 private const val NASA_STARTING_PAGE_INDEX = 1
 
 class NasaPagingSource(
@@ -13,11 +15,11 @@ class NasaPagingSource(
     private val query: String
 ) : PagingSource<Int, Item>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Item> {
-        val position = params.key ?: NASA_STARTING_PAGE_INDEX;
+        val position = params.key ?: NASA_STARTING_PAGE_INDEX
 
         return try {
             val response = nasaApi.searchPhotos(position,query)
-            val photos = response.collection.items;
+            val photos = response.collection.items
 
             LoadResult.Page(
                 data = photos,

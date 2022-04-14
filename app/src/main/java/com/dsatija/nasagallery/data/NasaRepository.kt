@@ -7,6 +7,9 @@ import com.dsatija.nasagallery.api.NasaApi
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Repository to handle network call with pagination.
+ */
 @Singleton
 class NasaRepository @Inject constructor(private val nasaApi: NasaApi) {
 
